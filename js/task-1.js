@@ -1,16 +1,14 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    const totalPrice = quantity * pricePerDroid;
-    if (totalPrice > customerCredits) {
-        return `Insufficient funds!`;
-        
-    }
-    else {
-        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    }
-}
 
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+
+const categoriesList = document.querySelector('#categories');
+const categoriesItems = categoriesList.querySelectorAll('.item');
+
+console.log(`Number of categories: ${categoriesItems.length}`);
+
+categoriesItems.forEach(category => {
+    const categoryName = category.querySelector('h2').textContent;
+    const categoryItems = category.querySelectorAll('li');
+
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${categoryItems.length}`);
+});
